@@ -1,1 +1,1 @@
-EURO 2020 Data analysis.
+UEFA Euro Cup 2020
