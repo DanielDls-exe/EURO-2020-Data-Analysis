@@ -6,6 +6,6 @@ app.include_router(teams.router)
 
 @app.get("/")
 async def root():
-    return {"message":"Bienvenidos a el analisis de datos de la Euro 2020."}
+    return {"message":"Welcome to the Euro 2020 data analysis"}
 
 
