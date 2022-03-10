@@ -1,28 +1,20 @@
 import json
 from fastapi import APIRouter
-from database.mongo import db
+from database.mongo import get_data
 from bson import json_util
 from json import loads
 
 router = APIRouter()
 @router.get("/players")
 async def players_all():
-    res = db["data_players"].find({})
-    print(res)
+    res = get_data("data_players")
     return loads(json_util.dumps(res))
 
-@router.get("/players/{name}")
-async def players_data(name):
-    res = db["data_players"].find({"name":name})
-    return loads(json_util.dumps(res))
+@router.get("/player/{name}")
+async def players_data(name:str):
+    res = get_data("data_players", {"name":name})
+    try:
+        return loads(json_util.dumps(res[0]))
+    except:
+        return {"mesagge": "Oh, sorry, there's been a problem! That player does not exist"}
 
-@router.get("/teams")
-async def teams_all():
-    res = db["data_teams"].find({})
-    return loads(json_util.dumps(res))
-
-@router.get("/team/{team}")
-async def team_data(team):
-    res = db["data_teams"].find({"team":team})
-    return loads(json_util.dumps(res))
-    
