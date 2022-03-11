@@ -21,8 +21,6 @@ pass
 pass
 
 
-```
-
 ## Despliegue 📦
 
 _Agrega notas adicionales sobre como hacer deploy_
