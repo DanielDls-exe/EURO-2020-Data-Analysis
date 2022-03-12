@@ -26,6 +26,15 @@ async def players_data(name:str):
     except:
         return {"mesagge": "Oh, sorry, there's been a problem! That player does not exist"}
 
+@router.get("/players/name/all")
+async def players_all_name():
+    res = get_data("data_players", {}, {"name":1, "_id": 0})
+    name_teams = []
+    for name in res:
+        name_teams.append(name["name"])
+    name_teams.sort()
+    return name_teams
+
 @router.get("/player/{name}/assist")
 async def players_data(name:str):
     res = get_data("data_players", {"name":name}, {"_id":0, "assistance":1})

@@ -66,3 +66,4 @@ async def teams_all_name():
     for team in res:
         name_teams.append(team["team"])
     return name_teams
+
