@@ -1,45 +1,69 @@
-# Título del Proyecto
-
-Euro 2020 Data Analysis
-
-## Comenzando 🚀
-
-These instructions will allow you to get a copy of the project running on your local machine for development and testing purposes.
+# Euro 2020 Data Analysis
 
 
-### Pre-requisitos 📋
+## Beginning 🚀
 
-Python, jupyter-notebook, streamlit, fastapi, pandas.
+To get started you need to have Python installed.
+
+### Installation 🔧
+
+#Clone the repository.
+
+```
+git clone https://github.com/DanielDls-exe/mid-project-euro2020.git
+```
+Use the command in the box below to install the project dependencies
+
+```
+cd midproject
+pip install -r requirements.txt
+```
+
+Now install Jupyter-notebook
+
+```
+cd midproject
+conda install -c conda-forge jupyterlab
+```
+
+#Run it locally.
+Go to the "data" folder
+
+```
+cd data
+jupyter notebook
+
+```
+
+## Running ⚙️
+
+#Execute the API
+
+```
+cd midproject/api 
+uvicorn main:app --reload
+```
+
+#Executes the Streamlit.
+
+```
+cd midproject/streamlit 
+streamlit run main.py
+```
 
 
-### Instalación 🔧
+## Built with 🛠️
 
-pass
+## Screenshots 📸
 
-## Ejecutando las pruebas ⚙️
-
-pass
-
-
-## Despliegue 📦
-
-_Agrega notas adicionales sobre como hacer deploy_
-
-## Construido con 🛠️
-
-pass
-
-
-## Autores ✒️
-
-_Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
+## Author ✒️
 
 * **Daniel Alvarado** - *Autor* - [danieldls-exe](https://github.com/DanielDls-exe)
 
 
-## Licencia 📄
+## License 📄
 
-Este proyecto está bajo la Licencia (MIT).
+This project is under the MIT License.
 
 ---
-⌨️ con ❤️ por [danieldls-exe](https://github.com/DanielDls-exe) 😊
+⌨️ with ❤️ by [danieldls-exe](https://github.com/DanielDls-exe) 😊
