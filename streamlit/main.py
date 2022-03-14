@@ -1,6 +1,6 @@
 from nbformat import write
 import streamlit as st
-from data.get_data import get_all_name_teams, get_team, get_stadistic_team
+from data.get_data import get_all_name_teams, get_team, get_stadistic_team, get_all_name_players, get_player
 import pages
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -15,6 +15,8 @@ select = st.sidebar.selectbox("Select page", ["Home", "Search Team for stadistic
 
 df = pd.DataFrame()
 team_fixed = {}
+player_fixed = {}
+df_1 = pd.DataFrame()
 
 if select == "Home":
     st.title('Welcome to Euro 2020 Data Analysis')
@@ -29,8 +31,19 @@ if select == "Home":
     team_fixed['Penalty Goals'] = stadistic_team['penaltys_total']
     team_fixed['Shots'] = stadistic_team['shots']
     df_team = df.append(team_fixed, ignore_index=True)
-    df_team.index = ['Team']
+    df_team.index = ['Data']
     st.dataframe(df_team)
+    name_players = get_all_name_players()
+    player = st.selectbox('Select a player to view its statistics', name_players)
+    stadistic_player = get_player(player)
+    player_fixed['Player'] = stadistic_player['name']
+    player_fixed['Goals'] = stadistic_player['goals']
+    player_fixed['Assistance'] = stadistic_player['assistance']
+    player_fixed['Yellow cards'] = stadistic_player['yellow_cards']
+    player_fixed['Red cards'] = stadistic_player['red_cards']
+    df_player = df_1.append(player_fixed, ignore_index=True)
+    df_player.index = ['Data']
+    st.dataframe(df_player)
     
 if select == "Search Team for stadistic":
     search_team()
