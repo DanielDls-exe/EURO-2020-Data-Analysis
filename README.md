@@ -76,8 +76,8 @@ streamlit run main.py
 /teams --> shows us the data of all the teams of Euro 2020
 /team/most --> Returns the team with the highest stats, you have to pass a web parameter stats = [goalscored, goalown, possession, penaltys, shots]
 /team/{team} --> The data of a specific team is obtained
-/team/{team}/shots -->
-/team/{team}/possession --> 
+/team/{team}/shots --> shots by a specific team
+/team/{team}/possession --> possession scored by a specific team
 /team/{team}/goals/scored --> Goals scored by a specific team
 /team/{team}/goals/received --> Goals received by a specific team
 /team/{team}/goals/penaltys --> Goals scored (penaltys) by a specific team
