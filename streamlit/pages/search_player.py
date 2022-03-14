@@ -5,7 +5,7 @@ from data.get_data import get_stadistic_player, get_stadistic_player_cards
 def search_player():
     st.title('Search by player stadistic')
     st.image('euro2020.jpg')
-    stadistic = st.selectbox('Select to view the player with the highest statistics', ['Goals', 'Assistance', 'Penalty Goals', 'Yellow cards', 'Red cards'])
+    stadistic = st.selectbox('Select to view the player with the highest statistics', ['Goals', 'Assistance', 'Yellow cards', 'Red cards'])
     if stadistic == 'Goals':
         st.image('https://as01.epimg.net/futbol/imagenes/2021/07/11/eurocopa/1626020001_645226_1626041642_noticia_normal_recorte1.jpg')
         data = get_stadistic_player('goals')
