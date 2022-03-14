@@ -34,14 +34,13 @@ def compare_teams():
             continue
         team_two_data.append(get_team(team2)[team_data])
 
-    x = np.arange(len(labels))  # the label locations
-    width = 0.35  # the width of the bars
+    x = np.arange(len(labels))  
+    width = 0.35  
 
     fig, ax = plt.subplots()
     rects1 = ax.bar(x - width/2, team_one_data, width, label=team1)
     rects2 = ax.bar(x + width/2, team_two_data, width, label=team2)
 
-    # Add some text for labels, title and custom x-axis tick labels, etc.
     ax.set_title('Stadistics of Euro 2020')
     ax.set_xticks(x, labels)
     ax.legend()
